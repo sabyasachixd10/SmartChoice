@@ -704,7 +704,7 @@ export const Compare = () => {
   );
 };
 
-export const Scanner = () => <PlaceholderPage title="Barcode Scanner" />;
+export { default as Scanner } from './BarcodeScannerPage';
 export const OCR = () => <PlaceholderPage title="OCR Scanner" />;
 export const Recommendations = () => <PlaceholderPage title="Recommendations" />;
 export const Dashboard = () => <PlaceholderPage title="User Dashboard" />;
