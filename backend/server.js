@@ -54,6 +54,7 @@ app.post('/api/recommendations/rank', require('./controllers/productController')
 
 // Phase 7: RAG endpoints
 app.get('/api/rag/context', require('./controllers/ragController').getRagContext);
+app.post('/api/rag/query', require('./controllers/ragController').postRagQuery);
 
 // Error Handling Middleware
 app.use(notFound);

@@ -83,3 +83,64 @@ Evaluation metrics should be recalculated whenever any of the following change:
 
 ## Current Limitations
 Because the SmartChoice test database currently only contains 12 sample products, queries that do not have a strong semantic match in the dataset will still return the "closest" vectors (though they will now be properly flagged as weak or moderate). This is a dataset limitation, not a retrieval algorithm failure, and will self-correct as the product database expands. Future calibration is required once the dataset grows.
+
+## RAG Query API
+
+A production-ready API endpoint is available to receive natural-language queries and return the grounded RAG context.
+
+**Endpoint:** `POST /api/rag/query`
+
+**Request Body:**
+```json
+{
+  "query": "healthy high fiber breakfast cereal",
+  "topK": 5
+}
+```
+
+**Validation & Security:**
+- `query` is required, must be a non-empty string, and is trimmed.
+- Excessively long queries (> 500 characters) are rejected.
+- `topK` is optional (defaults to 5) and must be an integer between 1 and 10.
+- Responses strictly exclude raw vector embeddings, MongoDB URIs, and environment secrets.
+
+**Response Structure (Successful):**
+```json
+{
+  "success": true,
+  "data": {
+    "query": {
+      "text": "healthy high fiber breakfast cereal",
+      "normalized": "healthy high fiber breakfast cereal",
+      "intent": "unknown"
+    },
+    "retrieval": {
+      "method": "mongodb_atlas_vector_search",
+      "hasStrongEvidence": true,
+      "hasSufficientEvidence": true
+    },
+    "groundingPolicy": {
+      "useOnlyRetrievedProductFacts": true
+    },
+    "products": [
+      {
+        "id": "...",
+        "evidence": { ... },
+        "retrievalQuality": { ... },
+        "grounding": { ... },
+        "facts": { ... },
+        "calculated": { ... }
+      }
+    ]
+  }
+}
+```
+
+**Error Handling:**
+Errors are returned as clean JSON responses without stack traces.
+```json
+{
+  "success": false,
+  "error": "Query is required and must be a non-empty string."
+}
+```
