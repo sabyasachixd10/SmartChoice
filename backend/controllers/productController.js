@@ -351,6 +351,32 @@ const semanticSearch = async (req, res, next) => {
   }
 };
 
+// @desc    Get product ingredients analysis
+// @route   GET /api/products/:id/ingredients
+// @access  Public
+const getIngredients = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const ingredientAnalysisService = require('../services/ingredientAnalysisService');
+
+    const product = await Product.findById(id);
+    if (!product) {
+      res.status(404);
+      throw new Error('Product not found');
+    }
+
+    const analysis = ingredientAnalysisService.analyzeProduct(product);
+
+    res.json({
+      success: true,
+      data: analysis,
+      message: 'Ingredient analysis completed successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   searchProducts,
   getProductByBarcode,
@@ -361,5 +387,6 @@ module.exports = {
   getScores,
   getDefaultPreferences,
   getRecommendations,
-  semanticSearch
+  semanticSearch,
+  getIngredients
 };
