@@ -1,0 +1,972 @@
+{
+  "metadata": {
+    "generatedAt": "2026-10-05T15:14:45.240Z",
+    "datasetSize": 12,
+    "topK": 5,
+    "evaluationVersion": "1.0",
+    "queryCount": 15
+  },
+  "metrics": {
+    "precisionAt1": 0.3333,
+    "precisionAt3": 0.4444,
+    "precisionAt5": 0.3867,
+    "hitAt1": 0.3333,
+    "hitAt3": 0.6667,
+    "hitAt5": 0.6667,
+    "strongRate": 0.32,
+    "moderateRate": 0.68,
+    "weakRate": 0,
+    "insufficientEvidenceRate": 0
+  },
+  "recall": {
+    "status": "not_reliable",
+    "reason": "The current 12-product dataset does not represent the complete product universe."
+  },
+  "queries": [
+    {
+      "id": "query-001",
+      "query": "salty potato snack",
+      "queryType": "category",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 1,
+        "precisionAt3": 1,
+        "precisionAt5": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 5
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.7790486812591553,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "6ac18ad7911636a12f45bba8",
+          "name": "Pringles original",
+          "brand": "Pringles",
+          "similarity": 0.7117981910705566,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.6793339848518372,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.6717121601104736,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "id": "6ac18833ddfee9cc376ba109",
+          "name": "Cuites au four nature",
+          "brand": "Lay's",
+          "similarity": 0.6679959297180176,
+          "classification": "moderate",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": "query-002",
+      "query": "potato chips",
+      "queryType": "category",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 1,
+        "precisionAt3": 1,
+        "precisionAt5": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 5
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.729079008102417,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "6ac18ad7911636a12f45bba8",
+          "name": "Pringles original",
+          "brand": "Pringles",
+          "similarity": 0.6919236183166504,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.6599306464195251,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18833ddfee9cc376ba109",
+          "name": "Cuites au four nature",
+          "brand": "Lay's",
+          "similarity": 0.6588127613067627,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.6500306725502014,
+          "classification": "moderate",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": "query-003",
+      "query": "sweet fizzy cola drink",
+      "queryType": "product",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 1,
+        "precisionAt3": 0.3333333333333333,
+        "precisionAt5": 0.2,
+        "hitAt1": true,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 1
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18847ddfee9cc376ba110",
+          "name": "Coca-Cola Original",
+          "brand": "Coca-Cola",
+          "similarity": 0.730987012386322,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "6ac18833ddfee9cc376ba109",
+          "name": "Cuites au four nature",
+          "brand": "Lay's",
+          "similarity": 0.5894081592559814,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.5844546556472778,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.5837010741233826,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba106",
+          "name": "Sour Cream & Onion",
+          "brand": "Pringles",
+          "similarity": 0.5828296542167664,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-004",
+      "query": "healthy high fiber crispbread",
+      "queryType": "trait",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0.6666666666666666,
+        "precisionAt5": 0.6,
+        "hitAt1": false,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 3
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.7357115745544434,
+          "classification": "strong",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.718796968460083,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.7111397385597229,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18831ddfee9cc376ba0f1",
+          "name": "AUTHENTIQUE",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.6853651404380798,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.6779823303222656,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-005",
+      "query": "wasa crispbread",
+      "queryType": "brand",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 1,
+        "precisionAt3": 0.3333333333333333,
+        "precisionAt5": 0.4,
+        "hitAt1": true,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 2
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.7070371508598328,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.6983988285064697,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.6433561444282532,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.6417298913002014,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.6411065459251404,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-006",
+      "query": "breakfast whole grain crisp bread",
+      "queryType": "category",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0.6666666666666666,
+        "precisionAt5": 0.4,
+        "hitAt1": false,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 2
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.6819631457328796,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.6552596092224121,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.6547147035598755,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.6531213521957397,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.6400665640830994,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-007",
+      "query": "high protein lentil snacks",
+      "queryType": "trait",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 1,
+        "precisionAt3": 1,
+        "precisionAt5": 0.6,
+        "hitAt1": true,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 3
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.7647127509117126,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 2,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.7509371042251587,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.7260783910751343,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.7233896851539612,
+          "classification": "strong",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba100",
+          "name": "Pringles Original",
+          "brand": "Pringles",
+          "similarity": 0.7142662405967712,
+          "classification": "strong",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-008",
+      "query": "greek yogurt dairy snack",
+      "queryType": "category",
+      "expectedAvailable": false,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0,
+        "precisionAt5": 0,
+        "hitAt1": false,
+        "hitAt3": false,
+        "hitAt5": false,
+        "relevantCount": 0
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.70099937915802,
+          "classification": "strong",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.6799551844596863,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.6643805503845215,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "id": "6ac18831ddfee9cc376ba0f1",
+          "name": "AUTHENTIQUE",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.6609869599342346,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba100",
+          "name": "Pringles Original",
+          "brand": "Pringles",
+          "similarity": 0.6597338914871216,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-009",
+      "query": "fresh orange juice drink",
+      "queryType": "category",
+      "expectedAvailable": false,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0,
+        "precisionAt5": 0,
+        "hitAt1": false,
+        "hitAt3": false,
+        "hitAt5": false,
+        "relevantCount": 0
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18847ddfee9cc376ba110",
+          "name": "Coca-Cola Original",
+          "brand": "Coca-Cola",
+          "similarity": 0.6735707521438599,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18833ddfee9cc376ba109",
+          "name": "Cuites au four nature",
+          "brand": "Lay's",
+          "similarity": 0.6259512901306152,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.6101768016815186,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "id": "6ac18ad7911636a12f45bba8",
+          "name": "Pringles original",
+          "brand": "Pringles",
+          "similarity": 0.6057785749435425,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.605129599571228,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-010",
+      "query": "dark chocolate bar",
+      "queryType": "category",
+      "expectedAvailable": false,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0,
+        "precisionAt5": 0,
+        "hitAt1": false,
+        "hitAt3": false,
+        "hitAt5": false,
+        "relevantCount": 0
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18833ddfee9cc376ba109",
+          "name": "Cuites au four nature",
+          "brand": "Lay's",
+          "similarity": 0.6130209565162659,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18831ddfee9cc376ba0f1",
+          "name": "AUTHENTIQUE",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.6018792390823364,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.5983407497406006,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.5974105596542358,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.5919578671455383,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-011",
+      "query": "crispy rye bread",
+      "queryType": "category",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0.3333333333333333,
+        "precisionAt5": 0.4,
+        "hitAt1": false,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 2
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.6956561207771301,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.6400291323661804,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.6394315958023071,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.6277763843536377,
+          "classification": "moderate",
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.6244744062423706,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-012",
+      "query": "whole grain foods",
+      "queryType": "trait",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0.6666666666666666,
+        "precisionAt5": 0.6,
+        "hitAt1": false,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 3
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.7350683212280273,
+          "classification": "strong",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.7346341609954834,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "id": "6ac18831ddfee9cc376ba0f4",
+          "name": "Fibres",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.7286074757575989,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18831ddfee9cc376ba0f1",
+          "name": "AUTHENTIQUE",
+          "brand": "wasa, Barilla Sverige AB",
+          "similarity": 0.7199639081954956,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.7178970575332642,
+          "classification": "strong",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-013",
+      "query": "low sugar products",
+      "queryType": "trait",
+      "expectedAvailable": true,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0.6666666666666666,
+        "precisionAt5": 0.6,
+        "hitAt1": false,
+        "hitAt3": true,
+        "hitAt5": true,
+        "relevantCount": 3
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18847ddfee9cc376ba110",
+          "name": "Coca-Cola Original",
+          "brand": "Coca-Cola",
+          "similarity": 0.7342033386230469,
+          "classification": "strong",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18832ddfee9cc376ba0fa",
+          "name": "Chips de lentilles saveur fines herbes",
+          "brand": "Vico",
+          "similarity": 0.705087423324585,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 3,
+          "id": "6ac18832ddfee9cc376ba103",
+          "name": "Chips de lentilles saveur tomate mozza",
+          "brand": "Vico, Natu' & Bon",
+          "similarity": 0.7033782005310059,
+          "classification": "strong",
+          "relevant": true
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba106",
+          "name": "Sour Cream & Onion",
+          "brand": "Pringles",
+          "similarity": 0.7030397653579712,
+          "classification": "strong",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba0f7",
+          "name": "wasa",
+          "brand": "wasa",
+          "similarity": 0.702186644077301,
+          "classification": "strong",
+          "relevant": true
+        }
+      ]
+    },
+    {
+      "id": "query-014",
+      "query": "fresh organic bananas",
+      "queryType": "category",
+      "expectedAvailable": false,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0,
+        "precisionAt5": 0,
+        "hitAt1": false,
+        "hitAt3": false,
+        "hitAt5": false,
+        "relevantCount": 0
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.6725339889526367,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18833ddfee9cc376ba109",
+          "name": "Cuites au four nature",
+          "brand": "Lay's",
+          "similarity": 0.6600499153137207,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18847ddfee9cc376ba110",
+          "name": "Coca-Cola Original",
+          "brand": "Coca-Cola",
+          "similarity": 0.6515635251998901,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "id": "6ac18832ddfee9cc376ba100",
+          "name": "Pringles Original",
+          "brand": "Pringles",
+          "similarity": 0.6478646993637085,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18ad7911636a12f45bba8",
+          "name": "Pringles original",
+          "brand": "Pringles",
+          "similarity": 0.6417699456214905,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    },
+    {
+      "id": "query-015",
+      "query": "fresh apples",
+      "queryType": "category",
+      "expectedAvailable": false,
+      "hasSufficientEvidence": true,
+      "metrics": {
+        "precisionAt1": 0,
+        "precisionAt3": 0,
+        "precisionAt5": 0,
+        "hitAt1": false,
+        "hitAt3": false,
+        "hitAt5": false,
+        "relevantCount": 0
+      },
+      "retrieved": [
+        {
+          "rank": 1,
+          "id": "6ac18832ddfee9cc376ba0fd",
+          "name": "Lightly sea salted crisps",
+          "brand": "Tyrrells",
+          "similarity": 0.6120878458023071,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 2,
+          "id": "6ac18833ddfee9cc376ba109",
+          "name": "Cuites au four nature",
+          "brand": "Lay's",
+          "similarity": 0.5933853387832642,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 3,
+          "id": "6ac18ad7911636a12f45bba8",
+          "name": "Pringles original",
+          "brand": "Pringles",
+          "similarity": 0.5926645994186401,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 4,
+          "id": "6ac18847ddfee9cc376ba110",
+          "name": "Coca-Cola Original",
+          "brand": "Coca-Cola",
+          "similarity": 0.5858994722366333,
+          "classification": "moderate",
+          "relevant": false
+        },
+        {
+          "rank": 5,
+          "id": "6ac18832ddfee9cc376ba100",
+          "name": "Pringles Original",
+          "brand": "Pringles",
+          "similarity": 0.5686468482017517,
+          "classification": "moderate",
+          "relevant": false
+        }
+      ]
+    }
+  ]
+}

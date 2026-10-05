@@ -56,5 +56,30 @@ The context passed to an LLM must be safe. Therefore, the RAG layer explicitly E
 - **Embedding Arrays**: The 384-dimensional arrays are mathematically meaningless to an LLM prompt, cost unnecessary tokens, and bloat the context window.
 - **Secrets**: API keys (like Hugging Face or future LLM keys) and MongoDB connection strings are strictly stripped.
 
+## Retrieval Evaluation
+
+To measure the quality of semantic retrieval and RAG context grounding deterministically, SmartChoice incorporates an offline evaluation framework (`scripts/evaluateRagRetrieval.js`).
+
+### Evaluation Dataset & Methodology
+- **Dataset**: `evaluation/ragQueries.json` containing 15 queries covering categories, brand searches, trait requirements (e.g. low sugar, high fiber), and unsupported/out-of-catalog items.
+- **Relevance Logic**: Deterministic, case-insensitive keyword and category matching with regex word boundary protection (e.g., preventing "apple" from matching "pineapple").
+- **Independence**: Evaluation labels are strictly independent of the SmartChoice Score and raw semantic similarity scores. Neither SmartChoice Score nor similarity score is used as ground truth relevance.
+
+### Evaluation Metrics Defined
+1. **Precision@K (K=1, 3, 5)**: Proportion of retrieved products in the top K that are genuinely relevant to the query.
+2. **Hit@K (K=1, 3, 5)**: Boolean indicator of whether at least one relevant product appears in the top K results.
+3. **Classification Rates**: Percentage of retrieved results falling into `strong` (>=0.70), `moderate` (0.55 - 0.70), or `weak` (<0.55) threshold tiers.
+4. **Unsupported Query Rate & Handling**: Measures how out-of-catalog queries (e.g. "fresh apples", "dark chocolate") perform. They return 0 relevant items as expected.
+5. **Recall Status (`not_reliable`)**: Recall cannot be reliably calculated because the 12-product sample database does not represent a complete product universe.
+
+### Recalculation Triggers
+Evaluation metrics should be recalculated whenever any of the following change:
+- Product catalog size or composition
+- Embedding model or vector dimensions
+- Text construction logic for embedding generation
+- Vector index configuration in MongoDB Atlas
+- Retrieval thresholds (`RAG_MIN_SIMILARITY`, `RAG_STRONG_SIMILARITY`)
+- Relevance matching logic
+
 ## Current Limitations
-Because the SmartChoice test database currently only contains 12 sample products, queries that do not have a strong semantic match in the dataset will still return the "closest" vectors (though they will now be properly flagged as weak). This is a dataset limitation, not a retrieval algorithm failure, and will self-correct as the product database expands. Future calibration is required once the dataset grows.
+Because the SmartChoice test database currently only contains 12 sample products, queries that do not have a strong semantic match in the dataset will still return the "closest" vectors (though they will now be properly flagged as weak or moderate). This is a dataset limitation, not a retrieval algorithm failure, and will self-correct as the product database expands. Future calibration is required once the dataset grows.

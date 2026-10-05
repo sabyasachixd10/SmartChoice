@@ -1,0 +1,122 @@
+[
+  {
+    "id": "query-001",
+    "query": "salty potato snack",
+    "expectedCategories": ["potato crisps", "chips de pomme de terre", "biscuits apéritifs", "tuiles de pommes de terre"],
+    "expectedKeywords": ["potato", "salt", "crisps", "chips", "pringles", "lay's", "tyrrells"],
+    "queryType": "category",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-002",
+    "query": "potato chips",
+    "expectedCategories": ["potato crisps", "chips de pomme de terre", "tuiles de pommes de terre"],
+    "expectedKeywords": ["potato", "chips", "crisps", "pringles", "lay's", "tyrrells"],
+    "queryType": "category",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-003",
+    "query": "sweet fizzy cola drink",
+    "expectedCategories": ["sodas au cola", "boissons gazeuses sucrées"],
+    "expectedKeywords": ["coca-cola", "coca", "cola", "soda"],
+    "queryType": "product",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-004",
+    "query": "healthy high fiber crispbread",
+    "expectedCategories": ["pains croustillants complets", "pains croustillants"],
+    "expectedKeywords": ["wasa", "fibres", "croustillants", "bread"],
+    "queryType": "trait",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-005",
+    "query": "wasa crispbread",
+    "expectedCategories": ["pains croustillants", "pain croquant", "biscottes"],
+    "expectedKeywords": ["wasa", "authentique", "fibres", "croustillant"],
+    "queryType": "brand",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-006",
+    "query": "breakfast whole grain crisp bread",
+    "expectedCategories": ["petit-déjeuners", "pains croustillants complets", "pains croustillants"],
+    "expectedKeywords": ["wasa", "authentique", "fibres"],
+    "queryType": "category",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-007",
+    "query": "high protein lentil snacks",
+    "expectedCategories": ["chips de lentilles", "biscuits apéritifs", "snacks apéritifs"],
+    "expectedKeywords": ["lentilles", "vico", "lentil"],
+    "queryType": "trait",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-008",
+    "query": "greek yogurt dairy snack",
+    "expectedCategories": ["yaourts", "yogurt", "produits laitiers"],
+    "expectedKeywords": ["yogurt", "yaourt", "dairy"],
+    "queryType": "category",
+    "expectedAvailable": false
+  },
+  {
+    "id": "query-009",
+    "query": "fresh orange juice drink",
+    "expectedCategories": ["jus de fruits", "fruit juice", "orange juice"],
+    "expectedKeywords": ["orange juice", "jus d'orange"],
+    "queryType": "category",
+    "expectedAvailable": false
+  },
+  {
+    "id": "query-010",
+    "query": "dark chocolate bar",
+    "expectedCategories": ["chocolats", "chocolate"],
+    "expectedKeywords": ["chocolate", "chocolat", "cacao"],
+    "queryType": "category",
+    "expectedAvailable": false
+  },
+  {
+    "id": "query-011",
+    "query": "crispy rye bread",
+    "expectedCategories": ["pains croustillants", "pain croquant", "biscottes"],
+    "expectedKeywords": ["wasa", "pain", "bread"],
+    "queryType": "category",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-012",
+    "query": "whole grain foods",
+    "expectedCategories": ["pains croustillants complets"],
+    "expectedKeywords": ["wasa", "fibres", "complets"],
+    "queryType": "trait",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-013",
+    "query": "low sugar products",
+    "expectedCategories": ["pains croustillants complets", "chips de lentilles"],
+    "expectedKeywords": ["wasa", "vico", "tyrrells", "fibres"],
+    "queryType": "trait",
+    "expectedAvailable": true
+  },
+  {
+    "id": "query-014",
+    "query": "fresh organic bananas",
+    "expectedCategories": ["fresh fruit", "bananas"],
+    "expectedKeywords": ["banana", "banane"],
+    "queryType": "category",
+    "expectedAvailable": false
+  },
+  {
+    "id": "query-015",
+    "query": "fresh apples",
+    "expectedCategories": ["fresh fruit", "apples"],
+    "expectedKeywords": ["apple", "apples"],
+    "queryType": "category",
+    "expectedAvailable": false
+  }
+]
