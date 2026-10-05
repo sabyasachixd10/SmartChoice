@@ -8,6 +8,7 @@ import { usePreferences } from '../context/PreferenceContext';
 import { searchSemanticProducts } from '../services/semanticSearchService';
 import RecommendationList from '../components/RecommendationList';
 import axios from 'axios';
+import RagAssistantPage from './RagAssistantPage';
 
 const PlaceholderPage = ({ title }) => (
   <div className="flex flex-col items-center justify-center h-64 bg-white rounded-lg shadow-sm border p-8">
@@ -712,3 +713,4 @@ export const Profile = () => <PlaceholderPage title="User Profile" />;
 export const Login = () => <PlaceholderPage title="Login" />;
 export const Register = () => <PlaceholderPage title="Register" />;
 export const About = () => <PlaceholderPage title="About SmartChoice" />;
+export { RagAssistantPage };

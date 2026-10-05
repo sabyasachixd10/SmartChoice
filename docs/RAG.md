@@ -153,3 +153,17 @@ Errors are returned as clean JSON responses without stack traces.
   "error": "Query is required and must be a non-empty string."
 }
 ```
+
+## Frontend RAG Interface
+
+A user-facing AI chat interface has been implemented in the React frontend (`frontend/src/pages/RagAssistantPage.jsx`) to consume the `POST /api/rag/query` endpoint.
+
+### Conversation Behavior
+The interface provides a chat-like experience where users can ask sequential questions about products, nutrition, and comparisons. The conversation history is maintained entirely in the frontend React state for the duration of the session; there is no persistent backend database chat history in this phase.
+
+### Displaying AI Answers & Products
+- **Answers**: The generated Gemini text is rendered alongside an explicit "Grounded in SmartChoice product data" badge when valid products are found.
+- **Retrieved Products**: Products returned in the `products` array of the API response are displayed visually as cards under the AI's answer. These cards show the product image, name, brand, SmartChoice score, and retrieval confidence, allowing the user to click through to existing product detail pages.
+
+### Insufficient Evidence Handling
+When a user asks about items outside the catalog (e.g., "Best iPhone 15 Pro Max"), the backend responds with a standard payload indicating `hasSufficientEvidence: false`. The frontend gracefully renders a specific warning inline ("Insufficient relevant products found") rather than attempting to present unrelated data as a valid recommendation, ensuring the AI maintains its grounding constraints.

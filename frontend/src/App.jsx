@@ -3,7 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import {
   Home, Search, ProductDetail, Compare, Scanner, OCR,
-  Recommendations, Dashboard, History, Profile, Login, Register, About
+  Recommendations, Dashboard, History, Profile, Login, Register, About,
+  RagAssistantPage
 } from './pages/Pages';
 import { ComparisonProvider } from './context/ComparisonContext';
 import { PreferenceProvider } from './context/PreferenceContext';
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
             <Route path="search" element={<Search />} />
+            <Route path="assistant" element={<RagAssistantPage />} />
             <Route path="product/:id" element={<ProductDetail />} />
             <Route path="compare" element={<Compare />} />
             <Route path="scanner" element={<Scanner />} />

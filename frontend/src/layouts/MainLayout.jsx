@@ -1,6 +1,6 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import { Search, Heart, User, ScanLine, Camera, GitCompare } from 'lucide-react';
+import { Search, Heart, User, ScanLine, Camera, GitCompare, Bot } from 'lucide-react';
 import { useComparison } from '../context/ComparisonContext';
 
 const MainLayout = () => {
@@ -15,6 +15,7 @@ const MainLayout = () => {
             </Link>
             <nav className="flex space-x-4">
               <Link to="/search" className="text-gray-600 hover:text-green-600 flex items-center"><Search className="w-5 h-5 mr-1"/> Search</Link>
+              <Link to="/assistant" className="text-indigo-600 hover:text-indigo-800 flex items-center"><Bot className="w-5 h-5 mr-1"/> AI Assistant</Link>
               <Link to="/scanner" className="text-gray-600 hover:text-green-600 flex items-center"><ScanLine className="w-5 h-5 mr-1"/> Scan</Link>
               <Link to="/compare" className="text-gray-600 hover:text-green-600 flex items-center">
                 <GitCompare className="w-5 h-5 mr-1"/> 
