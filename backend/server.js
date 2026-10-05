@@ -3,7 +3,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const morgan = require('morgan');
-require('dotenv').config({ path: '../.env' });
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
 const connectDB = require('./config/database');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
@@ -50,6 +51,9 @@ app.post('/api/scores', require('./controllers/productController').getScores);
 app.get('/api/preferences/default', require('./controllers/productController').getDefaultPreferences);
 app.post('/api/recommendations', require('./controllers/productController').getRecommendations);
 app.post('/api/recommendations/rank', require('./controllers/productController').getRecommendations);
+
+// Phase 7: RAG endpoints
+app.get('/api/rag/context', require('./controllers/ragController').getRagContext);
 
 // Error Handling Middleware
 app.use(notFound);
