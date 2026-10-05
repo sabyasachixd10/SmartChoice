@@ -119,6 +119,15 @@ A production-ready API endpoint is available to receive natural-language queries
       "hasStrongEvidence": true,
       "hasSufficientEvidence": true
     },
+    "answer": {
+      "text": "Based on the retrieved products, the item with the highest SmartChoice Score is...",
+      "grounded": true,
+      "confidence": "high",
+      "evidence": {
+        "productsUsed": ["product_id_1", "product_id_2"],
+        "retrievalQuality": "high"
+      }
+    },
     "groundingPolicy": {
       "useOnlyRetrievedProductFacts": true
     },

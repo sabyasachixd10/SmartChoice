@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google/genai": "^2.27.0",
     "@huggingface/inference": "^4.13.30",
     "axios": "^1.20.0",
     "cors": "^2.8.5",
