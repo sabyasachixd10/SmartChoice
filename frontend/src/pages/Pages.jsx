@@ -705,7 +705,7 @@ export const Compare = () => {
 };
 
 export { default as Scanner } from './BarcodeScannerPage';
-export const OCR = () => <PlaceholderPage title="OCR Scanner" />;
+export { default as OCR } from './OcrPage';
 export const Recommendations = () => <PlaceholderPage title="Recommendations" />;
 export const Dashboard = () => <PlaceholderPage title="User Dashboard" />;
 export const History = () => <PlaceholderPage title="Search History" />;

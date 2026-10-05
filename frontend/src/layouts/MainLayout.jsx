@@ -17,6 +17,7 @@ const MainLayout = () => {
               <Link to="/search" className="text-gray-600 hover:text-green-600 flex items-center"><Search className="w-5 h-5 mr-1"/> Search</Link>
               <Link to="/assistant" className="text-indigo-600 hover:text-indigo-800 flex items-center"><Bot className="w-5 h-5 mr-1"/> AI Assistant</Link>
               <Link to="/scanner" className="text-gray-600 hover:text-green-600 flex items-center"><ScanLine className="w-5 h-5 mr-1"/> Scan</Link>
+              <Link to="/ocr" className="text-gray-600 hover:text-green-600 flex items-center"><Camera className="w-5 h-5 mr-1"/> Scan Label</Link>
               <Link to="/compare" className="text-gray-600 hover:text-green-600 flex items-center">
                 <GitCompare className="w-5 h-5 mr-1"/> 
                 Compare {getProductCount() > 0 && <span className="ml-1 bg-green-100 text-green-800 text-xs font-bold px-2 py-0.5 rounded-full">{getProductCount()}</span>}
