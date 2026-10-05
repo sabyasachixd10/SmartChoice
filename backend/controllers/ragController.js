@@ -1,4 +1,5 @@
 const ragRetrievalService = require('../services/ragRetrievalService');
+const ragConfig = require('../config/ragConfig');
 
 // @desc    Get RAG context for a query
 // @route   GET /api/rag/context?q=...&topK=...
@@ -6,7 +7,7 @@ const ragRetrievalService = require('../services/ragRetrievalService');
 const getRagContext = async (req, res, next) => {
   try {
     const query = req.query.q;
-    const topK = req.query.topK ? parseInt(req.query.topK, 10) : 5;
+    const topK = req.query.topK ? parseInt(req.query.topK, 10) : ragConfig.RAG_DEFAULT_TOP_K;
     
     // Parse preferences if passed via query (e.g. ?prefs={"highProtein":true})
     let preferences = {};
