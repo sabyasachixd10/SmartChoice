@@ -377,6 +377,32 @@ const getIngredients = async (req, res, next) => {
   }
 };
 
+// @desc    Get product processing analysis
+// @route   GET /api/products/:id/processing
+// @access  Public
+const getProcessing = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const processingAnalysisService = require('../services/processingAnalysisService');
+
+    const product = await Product.findById(id);
+    if (!product) {
+      res.status(404);
+      throw new Error('Product not found');
+    }
+
+    const analysis = processingAnalysisService.analyzeProcessing(product);
+
+    res.json({
+      success: true,
+      data: analysis,
+      message: 'Processing analysis completed successfully'
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   searchProducts,
   getProductByBarcode,
@@ -388,5 +414,6 @@ module.exports = {
   getDefaultPreferences,
   getRecommendations,
   semanticSearch,
-  getIngredients
+  getIngredients,
+  getProcessing
 };
