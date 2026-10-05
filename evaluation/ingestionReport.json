@@ -1,0 +1,38 @@
+{
+  "source": "Open Food Facts",
+  "startedAt": "2026-10-05T15:32:02.388Z",
+  "completedAt": "2026-10-05T15:34:23.199Z",
+  "dryRun": false,
+  "requested": 500,
+  "accepted": 500,
+  "inserted": 495,
+  "updated": 5,
+  "duplicates": 93,
+  "skipped": 103,
+  "errors": 0,
+  "categories": {
+    "beverages": 25,
+    "dairies": 25,
+    "yogurts": 25,
+    "cheeses": 25,
+    "cereals": 25,
+    "oats": 25,
+    "breads": 25,
+    "crispbreads": 25,
+    "snacks": 25,
+    "potato-chips": 47,
+    "chocolates": 25,
+    "sauces": 25,
+    "prepared-meals": 25,
+    "frozen-foods": 25,
+    "fruits": 25,
+    "vegetables": 25,
+    "plant-based-foods": 13,
+    "soft-drinks": 25,
+    "biscuits": 40
+  },
+  "skipReasons": {
+    "missing_name": 10,
+    "duplicate_barcode_in_batch": 93
+  }
+}

@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const mongoose = require('../backend/node_modules/mongoose');
 const connectDB = require('../backend/config/database');
+const Product = require('../backend/models/Product');
 const ragRetrievalService = require('../backend/services/ragRetrievalService');
 
 const QUERIES_FILE = path.join(__dirname, '../evaluation/ragQueries.json');
@@ -212,10 +213,13 @@ async function runEvaluation() {
     console.log(`  - "${uq.query}": Hits@5=${uq.metrics.hitAt5}, Relevant=${uq.metrics.relevantCount}, HasSufficientEvidence=${uq.hasSufficientEvidence}`);
   });
 
+  const datasetSize = await Product.countDocuments();
+  console.log(`Evaluated across dataset of ${datasetSize} products.`);
+
   const evaluationOutput = {
     metadata: {
       generatedAt: new Date().toISOString(),
-      datasetSize: 12,
+      datasetSize,
       topK,
       evaluationVersion: "1.0",
       queryCount: numQueries
@@ -233,8 +237,10 @@ async function runEvaluation() {
       insufficientEvidenceRate: Number(insufficientEvidenceRate.toFixed(4))
     },
     recall: {
-      status: "not_reliable",
-      reason: "The current 12-product dataset does not represent the complete product universe."
+      status: datasetSize >= 500 ? "evaluating_expanded_catalog" : "not_reliable",
+      reason: datasetSize >= 500 
+        ? `Evaluated across ${datasetSize} products across 19 categories from Open Food Facts ingestion.` 
+        : `The current ${datasetSize}-product dataset does not represent the complete product universe.`
     },
     queries: queryResults
   };

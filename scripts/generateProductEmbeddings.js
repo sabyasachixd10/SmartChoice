@@ -19,11 +19,11 @@ async function run() {
 
   try {
     const query = {};
-    const cursor = limit > 0 
-      ? Product.find(query).limit(limit).cursor()
-      : Product.find(query).cursor();
+    const products = limit > 0 
+      ? await Product.find(query).limit(limit)
+      : await Product.find(query);
     
-    let totalCount = limit > 0 ? limit : await Product.countDocuments(query);
+    let totalCount = products.length;
     console.log(`Found ${totalCount} total products to process (Limit: ${limit || 'None'})`);
 
     let processed = 0;
@@ -31,28 +31,27 @@ async function run() {
     let reused = 0;
     let failed = 0;
 
-    for await (const product of cursor) {
-      processed++;
-      console.log(`Processing ${processed}/${totalCount}: ${product.identity?.name || product._id}`);
-      
-      try {
-        const wasGenerated = await productEmbeddingService.ensureProductEmbedding(product, true);
-        
-        if (wasGenerated) {
-          generated++;
-          console.log(`  -> Generated new embedding (Dimensions: ${product.embedding.dimensions})`);
-        } else {
-          reused++;
-          console.log(`  -> Reused existing embedding`);
+    const concurrency = 2;
+    for (let i = 0; i < products.length; i += concurrency) {
+      const batch = products.slice(i, i + concurrency);
+      await Promise.all(batch.map(async (product) => {
+        processed++;
+        try {
+          const wasGenerated = await productEmbeddingService.ensureProductEmbedding(product, true);
+          if (wasGenerated) {
+            generated++;
+            console.log(`[${processed}/${totalCount}] Generated embedding for: ${product.identity?.name || product._id}`);
+          } else {
+            reused++;
+          }
+        } catch (err) {
+          failed++;
+          console.error(`[${processed}/${totalCount}] Failed embedding for ${product._id}:`, err.message);
         }
-      } catch (err) {
-        failed++;
-        console.error(`  -> Failed to generate embedding for ${product._id}:`, err.message);
-        // Continue to next product without failing the whole batch
-      }
+      }));
       
-      // Add a slight delay to respect rate limits on Hugging Face free tier
-      await new Promise(r => setTimeout(r, 200));
+      // Delay between batch chunks to respect HF rate limits
+      await new Promise(r => setTimeout(r, 300));
     }
 
     console.log('\n--- EMBEDDING GENERATION SUMMARY ---');

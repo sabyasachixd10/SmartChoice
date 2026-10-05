@@ -1,76 +1,76 @@
 queryId,query,rank,product,similarity,relevance,relevanceClass,hitAt1,hitAt3,hitAt5
 query-001,"salty potato snack",1,"Lightly sea salted crisps (Tyrrells)",0.7790,true,strong,true,true,true
-query-001,"salty potato snack",2,"Pringles original (Pringles)",0.7118,true,strong,true,true,true
-query-001,"salty potato snack",3,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.6793,true,moderate,true,true,true
-query-001,"salty potato snack",4,"Chips de lentilles saveur fines herbes (Vico)",0.6717,true,moderate,true,true,true
-query-001,"salty potato snack",5,"Cuites au four nature (Lay's)",0.6680,true,moderate,true,true,true
-query-002,"potato chips",1,"Lightly sea salted crisps (Tyrrells)",0.7291,true,strong,true,true,true
-query-002,"potato chips",2,"Pringles original (Pringles)",0.6919,true,moderate,true,true,true
-query-002,"potato chips",3,"Chips de lentilles saveur fines herbes (Vico)",0.6599,true,moderate,true,true,true
-query-002,"potato chips",4,"Cuites au four nature (Lay's)",0.6588,true,moderate,true,true,true
-query-002,"potato chips",5,"wasa (wasa)",0.6500,true,moderate,true,true,true
-query-003,"sweet fizzy cola drink",1,"Coca-Cola Original (Coca-Cola)",0.7310,true,strong,true,true,true
-query-003,"sweet fizzy cola drink",2,"Cuites au four nature (Lay's)",0.5894,false,moderate,true,true,true
-query-003,"sweet fizzy cola drink",3,"Fibres (wasa, Barilla Sverige AB)",0.5845,false,moderate,true,true,true
-query-003,"sweet fizzy cola drink",4,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.5837,false,moderate,true,true,true
-query-003,"sweet fizzy cola drink",5,"Sour Cream & Onion (Pringles)",0.5828,false,moderate,true,true,true
-query-004,"healthy high fiber crispbread",1,"Lightly sea salted crisps (Tyrrells)",0.7357,false,strong,false,true,true
-query-004,"healthy high fiber crispbread",2,"Fibres (wasa, Barilla Sverige AB)",0.7188,true,strong,false,true,true
-query-004,"healthy high fiber crispbread",3,"wasa (wasa)",0.7111,true,strong,false,true,true
-query-004,"healthy high fiber crispbread",4,"AUTHENTIQUE (wasa, Barilla Sverige AB)",0.6854,true,moderate,false,true,true
-query-004,"healthy high fiber crispbread",5,"Chips de lentilles saveur fines herbes (Vico)",0.6780,false,moderate,false,true,true
-query-005,"wasa crispbread",1,"wasa (wasa)",0.7070,true,strong,true,true,true
-query-005,"wasa crispbread",2,"Lightly sea salted crisps (Tyrrells)",0.6984,false,moderate,true,true,true
-query-005,"wasa crispbread",3,"Chips de lentilles saveur fines herbes (Vico)",0.6434,false,moderate,true,true,true
-query-005,"wasa crispbread",4,"Fibres (wasa, Barilla Sverige AB)",0.6417,true,moderate,true,true,true
-query-005,"wasa crispbread",5,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.6411,false,moderate,true,true,true
-query-006,"breakfast whole grain crisp bread",1,"Lightly sea salted crisps (Tyrrells)",0.6820,false,moderate,false,true,true
-query-006,"breakfast whole grain crisp bread",2,"Fibres (wasa, Barilla Sverige AB)",0.6553,true,moderate,false,true,true
-query-006,"breakfast whole grain crisp bread",3,"wasa (wasa)",0.6547,true,moderate,false,true,true
-query-006,"breakfast whole grain crisp bread",4,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.6531,false,moderate,false,true,true
-query-006,"breakfast whole grain crisp bread",5,"Chips de lentilles saveur fines herbes (Vico)",0.6401,false,moderate,false,true,true
+query-001,"salty potato snack",2,"Chips paysanne nature (U)",0.7413,true,strong,true,true,true
+query-001,"salty potato snack",3,"Chips paysannes nature (Marque Repère, Pom'Lisse)",0.7401,true,strong,true,true,true
+query-001,"salty potato snack",4,"Crunchm (Balaji)",0.7369,true,strong,true,true,true
+query-001,"salty potato snack",5,"Original Crispbread (RYVITA)",0.7251,true,strong,true,true,true
+query-002,"potato chips",1,"Chips paysannes nature (Marque Repère, Pom'Lisse)",0.7891,true,strong,true,true,true
+query-002,"potato chips",2,"Leader Chips Fromage Oignons (Leaderfood)",0.7777,true,strong,true,true,true
+query-002,"potato chips",3,"Chips Craquante Sel Brets (Brets)",0.7508,true,strong,true,true,true
+query-002,"potato chips",4,"Chips recette paysanne nature (Lay's)",0.7485,true,strong,true,true,true
+query-002,"potato chips",5,"Chips paysanne nature (U)",0.7454,true,strong,true,true,true
+query-003,"sweet fizzy cola drink",1,"Coca Cola (Coca-Cola)",0.7590,true,strong,true,true,true
+query-003,"sweet fizzy cola drink",2,"Coca-Cola Original Taste (COCA-COLA SERVICES SA/NV, Coca-Cola)",0.7586,true,strong,true,true,true
+query-003,"sweet fizzy cola drink",3,"Sprite (Coca-Cola, Sprite)",0.7459,true,strong,true,true,true
+query-003,"sweet fizzy cola drink",4,"Poms (COCA-COLA)",0.7441,true,strong,true,true,true
+query-003,"sweet fizzy cola drink",5,"Coca Cola (COCA-COLA SERVICES SA/NV)",0.7403,true,strong,true,true,true
+query-004,"healthy high fiber crispbread",1,"Original Crispbread (RYVITA)",0.7935,false,strong,false,false,true
+query-004,"healthy high fiber crispbread",2,"Sesame Crispbread (Rivercote)",0.7900,false,strong,false,false,true
+query-004,"healthy high fiber crispbread",3,"Sesame Crispbread (Ryvita)",0.7840,false,strong,false,false,true
+query-004,"healthy high fiber crispbread",4,"Pumpkin Seed & Oat Crispbread (RYVITA)",0.7601,true,strong,false,false,true
+query-004,"healthy high fiber crispbread",5,"Blé Complet Wraps (Old El Paso, GENERAL MILLS IBERICA S.A.U.)",0.7590,false,strong,false,false,true
+query-005,"wasa crispbread",1,"Original Crispbread (RYVITA)",0.7582,false,strong,false,false,true
+query-005,"wasa crispbread",2,"Sesame Crispbread (Rivercote)",0.7376,false,strong,false,false,true
+query-005,"wasa crispbread",3,"Sesame Crispbread (Ryvita)",0.7354,false,strong,false,false,true
+query-005,"wasa crispbread",4,"Wasa integrale (wasa)",0.7240,true,strong,false,false,true
+query-005,"wasa crispbread",5,"Original (wasa)",0.7198,true,strong,false,false,true
+query-006,"breakfast whole grain crisp bread",1,"Pumpkin Seed & Oat Crispbread (RYVITA)",0.7637,false,strong,false,false,false
+query-006,"breakfast whole grain crisp bread",2,"Sesame Crispbread (Ryvita)",0.7530,false,strong,false,false,false
+query-006,"breakfast whole grain crisp bread",3,"Original Crispbread (RYVITA)",0.7449,false,strong,false,false,false
+query-006,"breakfast whole grain crisp bread",4,"Sesame Crispbread (Rivercote)",0.7351,false,strong,false,false,false
+query-006,"breakfast whole grain crisp bread",5,"Dark Rye Crispbread (RYVITA)",0.7310,false,strong,false,false,false
 query-007,"high protein lentil snacks",1,"Chips de lentilles saveur fines herbes (Vico)",0.7647,true,strong,true,true,true
-query-007,"high protein lentil snacks",2,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.7509,true,strong,true,true,true
-query-007,"high protein lentil snacks",3,"Fibres (wasa, Barilla Sverige AB)",0.7261,true,strong,true,true,true
-query-007,"high protein lentil snacks",4,"Lightly sea salted crisps (Tyrrells)",0.7234,false,strong,true,true,true
-query-007,"high protein lentil snacks",5,"Pringles Original (Pringles)",0.7143,false,strong,true,true,true
-query-008,"greek yogurt dairy snack",1,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.7010,false,strong,false,false,false
-query-008,"greek yogurt dairy snack",2,"Lightly sea salted crisps (Tyrrells)",0.6800,false,moderate,false,false,false
-query-008,"greek yogurt dairy snack",3,"Fibres (wasa, Barilla Sverige AB)",0.6644,false,moderate,false,false,false
-query-008,"greek yogurt dairy snack",4,"AUTHENTIQUE (wasa, Barilla Sverige AB)",0.6610,false,moderate,false,false,false
-query-008,"greek yogurt dairy snack",5,"Pringles Original (Pringles)",0.6597,false,moderate,false,false,false
-query-009,"fresh orange juice drink",1,"Coca-Cola Original (Coca-Cola)",0.6736,false,moderate,false,false,false
-query-009,"fresh orange juice drink",2,"Cuites au four nature (Lay's)",0.6260,false,moderate,false,false,false
-query-009,"fresh orange juice drink",3,"Lightly sea salted crisps (Tyrrells)",0.6102,false,moderate,false,false,false
-query-009,"fresh orange juice drink",4,"Pringles original (Pringles)",0.6058,false,moderate,false,false,false
-query-009,"fresh orange juice drink",5,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.6051,false,moderate,false,false,false
-query-010,"dark chocolate bar",1,"Cuites au four nature (Lay's)",0.6130,false,moderate,false,false,false
-query-010,"dark chocolate bar",2,"AUTHENTIQUE (wasa, Barilla Sverige AB)",0.6019,false,moderate,false,false,false
-query-010,"dark chocolate bar",3,"Fibres (wasa, Barilla Sverige AB)",0.5983,false,moderate,false,false,false
-query-010,"dark chocolate bar",4,"Chips de lentilles saveur fines herbes (Vico)",0.5974,false,moderate,false,false,false
-query-010,"dark chocolate bar",5,"wasa (wasa)",0.5920,false,moderate,false,false,false
-query-011,"crispy rye bread",1,"Lightly sea salted crisps (Tyrrells)",0.6957,false,moderate,false,true,true
-query-011,"crispy rye bread",2,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.6400,false,moderate,false,true,true
-query-011,"crispy rye bread",3,"Fibres (wasa, Barilla Sverige AB)",0.6394,true,moderate,false,true,true
-query-011,"crispy rye bread",4,"wasa (wasa)",0.6278,true,moderate,false,true,true
-query-011,"crispy rye bread",5,"Chips de lentilles saveur fines herbes (Vico)",0.6245,false,moderate,false,true,true
-query-012,"whole grain foods",1,"Lightly sea salted crisps (Tyrrells)",0.7351,false,strong,false,true,true
-query-012,"whole grain foods",2,"wasa (wasa)",0.7346,true,strong,false,true,true
-query-012,"whole grain foods",3,"Fibres (wasa, Barilla Sverige AB)",0.7286,true,strong,false,true,true
-query-012,"whole grain foods",4,"AUTHENTIQUE (wasa, Barilla Sverige AB)",0.7200,true,strong,false,true,true
-query-012,"whole grain foods",5,"Chips de lentilles saveur fines herbes (Vico)",0.7179,false,strong,false,true,true
-query-013,"low sugar products",1,"Coca-Cola Original (Coca-Cola)",0.7342,false,strong,false,true,true
-query-013,"low sugar products",2,"Chips de lentilles saveur fines herbes (Vico)",0.7051,true,strong,false,true,true
-query-013,"low sugar products",3,"Chips de lentilles saveur tomate mozza (Vico, Natu' & Bon)",0.7034,true,strong,false,true,true
-query-013,"low sugar products",4,"Sour Cream & Onion (Pringles)",0.7030,false,strong,false,true,true
-query-013,"low sugar products",5,"wasa (wasa)",0.7022,true,strong,false,true,true
-query-014,"fresh organic bananas",1,"Lightly sea salted crisps (Tyrrells)",0.6725,false,moderate,false,false,false
-query-014,"fresh organic bananas",2,"Cuites au four nature (Lay's)",0.6600,false,moderate,false,false,false
-query-014,"fresh organic bananas",3,"Coca-Cola Original (Coca-Cola)",0.6516,false,moderate,false,false,false
-query-014,"fresh organic bananas",4,"Pringles Original (Pringles)",0.6479,false,moderate,false,false,false
-query-014,"fresh organic bananas",5,"Pringles original (Pringles)",0.6418,false,moderate,false,false,false
-query-015,"fresh apples",1,"Lightly sea salted crisps (Tyrrells)",0.6121,false,moderate,false,false,false
-query-015,"fresh apples",2,"Cuites au four nature (Lay's)",0.5934,false,moderate,false,false,false
-query-015,"fresh apples",3,"Pringles original (Pringles)",0.5927,false,moderate,false,false,false
-query-015,"fresh apples",4,"Coca-Cola Original (Coca-Cola)",0.5859,false,moderate,false,false,false
-query-015,"fresh apples",5,"Pringles Original (Pringles)",0.5686,false,moderate,false,false,false
+query-007,"high protein lentil snacks",2,"Lentilles cuisinées, riz & soja (Céréal Bio)",0.7588,true,strong,true,true,true
+query-007,"high protein lentil snacks",3,"Lentilles cuisinées à l'Auvergnate (Raynal & Roquelaure R&R)",0.7583,true,strong,true,true,true
+query-007,"high protein lentil snacks",4,"Lentilles préparées 1/2 (Cassegrain)",0.7578,true,strong,true,true,true
+query-007,"high protein lentil snacks",5,"Lentilles Cuisinées à l'Auvergnate (Raynal & Roquelaure)",0.7553,true,strong,true,true,true
+query-008,"greek yogurt dairy snack",1,"Yogurt Greek Style (Pilos)",0.8298,true,strong,true,true,true
+query-008,"greek yogurt dairy snack",2,"vach (Unknown)",0.7561,false,strong,true,true,true
+query-008,"greek yogurt dairy snack",3,"Dan up (Danone)",0.7529,true,strong,true,true,true
+query-008,"greek yogurt dairy snack",4,"Danone-Peche (Danone)",0.7439,true,strong,true,true,true
+query-008,"greek yogurt dairy snack",5,"Jebli (Danone, Centrale, Jebli)",0.7420,false,strong,true,true,true
+query-009,"fresh orange juice drink",1,"Fanta Orange (Fanta)",0.7989,true,strong,true,true,true
+query-009,"fresh orange juice drink",2,"fanta Orange 0,33 (COCA-COLA SERVICES SA/NV)",0.7978,true,strong,true,true,true
+query-009,"fresh orange juice drink",3,"Fanta 0,5 (Fanta)",0.6933,false,moderate,true,true,true
+query-009,"fresh orange juice drink",4,"Poms (COCA-COLA)",0.6828,false,moderate,true,true,true
+query-009,"fresh orange juice drink",5,"Coca-Cola original taste (maroc)",0.6827,false,moderate,true,true,true
+query-010,"dark chocolate bar",1,"Excellence 85% Cacao Rich Dark (Lindt)",0.7310,true,strong,true,true,true
+query-010,"dark chocolate bar",2,"LINDT EXCELLENCE Smooth Dark 78% (LINDT EXCELLENCE)",0.7214,true,strong,true,true,true
+query-010,"dark chocolate bar",3,"Dark absolute 99% cacao (LINDT SPRUNGLI SAS)",0.7189,true,strong,true,true,true
+query-010,"dark chocolate bar",4,"Noir 70% Intense (cote d or)",0.7102,true,strong,true,true,true
+query-010,"dark chocolate bar",5,"Chocolate con leche y almendras (CHOCOLATES MARUJA S.L.)",0.7057,true,strong,true,true,true
+query-011,"crispy rye bread",1,"Dark Rye Crispbread (RYVITA)",0.7865,true,strong,true,true,true
+query-011,"crispy rye bread",2,"Original Crispbread (RYVITA)",0.7773,false,strong,true,true,true
+query-011,"crispy rye bread",3,"Pumpkin Seed & Oat Crispbread (RYVITA)",0.7693,true,strong,true,true,true
+query-011,"crispy rye bread",4,"Sesame Crispbread (Ryvita)",0.7599,false,strong,true,true,true
+query-011,"crispy rye bread",5,"Original (wasa)",0.7372,true,strong,true,true,true
+query-012,"whole grain foods",1,"Pumpkin Seed & Oat Crispbread (RYVITA)",0.8089,false,strong,false,false,false
+query-012,"whole grain foods",2,"Sesame Crispbread (Ryvita)",0.7919,false,strong,false,false,false
+query-012,"whole grain foods",3,"Houmous extra - Pois chiches français & graines de sésame (L'atelier Blini, LABEYRIE FINE FOODS FRANCE)",0.7796,false,strong,false,false,false
+query-012,"whole grain foods",4,"Tartines céréales & graines 450g (La Boulangère, La boulangere)",0.7770,false,strong,false,false,false
+query-012,"whole grain foods",5,"great grains raisins, dates & pecans cereal (Post)",0.7764,false,strong,false,false,false
+query-013,"low sugar products",1,"Coca-Cola life (Coca-Cola)",0.7656,false,strong,false,false,false
+query-013,"low sugar products",2,"CANADA DRY (Orangina - Schweppes)",0.7506,false,strong,false,false,false
+query-013,"low sugar products",3,"Poms (COCA-COLA)",0.7488,false,strong,false,false,false
+query-013,"low sugar products",4,"gullon fibre zero sugar free (GALLETAS GULLON S.A.)",0.7454,false,strong,false,false,false
+query-013,"low sugar products",5,"Ketchup 5 Ingrédients (Amora)",0.7436,false,strong,false,false,false
+query-014,"fresh organic bananas",1,"Perly (Jaouda)",0.6998,true,moderate,true,true,true
+query-014,"fresh organic bananas",2,"Fanta Orange (Fanta)",0.6976,false,moderate,true,true,true
+query-014,"fresh organic bananas",3,"Dried & Sweetened Cranberries (Alesto)",0.6888,false,moderate,true,true,true
+query-014,"fresh organic bananas",4,"fanta Orange 0,33 (COCA-COLA SERVICES SA/NV)",0.6886,false,moderate,true,true,true
+query-014,"fresh organic bananas",5,"Margarine bio doux tartine & cuisson (Primevère)",0.6869,false,moderate,true,true,true
+query-015,"fresh apples",1,"Raspberry & Apple Oaty Bars (Hero UK Foods, Organix)",0.6464,true,moderate,true,true,true
+query-015,"fresh apples",2,"fanta Orange 0,33 (COCA-COLA SERVICES SA/NV)",0.6448,false,moderate,true,true,true
+query-015,"fresh apples",3,"Pomme (Classic)",0.6438,false,moderate,true,true,true
+query-015,"fresh apples",4,"Fanta Orange (Fanta)",0.6417,false,moderate,true,true,true
+query-015,"fresh apples",5,"Premium Fruit & Nut Muesli (Lidl)",0.6412,false,moderate,true,true,true
