@@ -2,11 +2,13 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api';
 
-export const queryRag = async (query, topK = 5) => {
+export const queryRag = async (query, topK = 5, sessionId = null, activeProductIds = []) => {
   try {
     const response = await axios.post(`${API_URL}/rag/query`, {
       query,
-      topK
+      topK,
+      sessionId,
+      activeProductIds
     });
     return response.data;
   } catch (error) {

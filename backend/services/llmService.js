@@ -1,4 +1,5 @@
 const { GoogleGenAI } = require('@google/genai');
+const { executeWithRetry } = require('../utils/geminiErrorHandler');
 
 class LlmService {
   constructor() {
@@ -31,7 +32,7 @@ CRITICAL GROUNDING RULES:
     this.initAi();
     
     if (!this.ai) {
-      throw new Error("GEMINI_API_KEY is not configured.");
+      throw { type: 'GEMINI_AUTH_ERROR', message: "GEMINI_API_KEY is not configured." };
     }
 
     const hasSufficientEvidence = ragContext.retrieval?.hasSufficientEvidence;
@@ -53,19 +54,19 @@ CRITICAL GROUNDING RULES:
     try {
       const prompt = `User Query: "${query}"\n\nRetrieved Context:\n${JSON.stringify(ragContext, null, 2)}`;
       
-      const response = await this.ai.models.generateContent({
+      const response = await executeWithRetry(() => this.ai.models.generateContent({
         model: this.modelName,
         contents: prompt,
         config: {
           systemInstruction: this.getSystemPrompt(),
           temperature: 0.1
         }
-      });
+      }));
       
       textAnswer = response.text;
     } catch (error) {
-      console.error("[LLM Service Error]", error);
-      throw new Error(`LLM Generation Failed: ${error.message}`);
+      console.error("[LLM Service Error]", error.message || error.type || error);
+      throw error; // Let the controller handle it and return a structured error
     }
 
     return {

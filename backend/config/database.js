@@ -13,8 +13,7 @@ const connectDB = async () => {
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
       const conn = await mongoose.connect(process.env.MONGODB_URI, {
-        serverSelectionTimeoutMS: 15000,
-        family: 4
+        serverSelectionTimeoutMS: 15000
       });
       console.log(`MongoDB Connected: ${conn.connection.host}`);
       

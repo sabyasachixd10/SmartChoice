@@ -36,6 +36,60 @@ const calculateDataCompleteness = (product) => {
   };
 };
 
+const validateMacroCalories = (nutrition, thresholds = { warning: 0.10, review: 0.20 }) => {
+  if (!nutrition) {
+    return { status: 'invalid', reason: 'Missing nutrition data completely.' };
+  }
+
+  const p = nutrition.protein;
+  const c = nutrition.carbohydrates;
+  const f = nutrition.fat;
+  
+  if (p === null && c === null && f === null) {
+     return { status: 'warning', reason: 'Macronutrients missing, cannot validate stated calories.' };
+  }
+
+  const calcP = p || 0;
+  const calcC = c || 0;
+  const calcF = f || 0;
+
+  const calculatedCalories = (calcP * 4) + (calcC * 4) + (calcF * 9);
+  const statedCalories = nutrition.calories;
+
+  if (statedCalories === null || statedCalories === undefined) {
+    return { 
+      status: 'warning', 
+      reason: 'Stated calories missing. Calculated from macros: ' + Math.round(calculatedCalories), 
+      calculated: calculatedCalories 
+    };
+  }
+
+  const diff = Math.abs(calculatedCalories - statedCalories);
+  const ratioDiff = statedCalories === 0 
+    ? (calculatedCalories > 10 ? 1 : 0) 
+    : (diff / statedCalories);
+
+  let status = 'valid';
+  let reason = 'Macros match stated calories within acceptable bounds.';
+
+  if (ratioDiff > thresholds.review) {
+    status = 'review_required';
+    reason = `Calculated calories (${Math.round(calculatedCalories)}) deviate by ${(ratioDiff * 100).toFixed(1)}% from stated (${statedCalories}). Review required.`;
+  } else if (ratioDiff > thresholds.warning) {
+    status = 'warning';
+    reason = `Calculated calories (${Math.round(calculatedCalories)}) deviate by ${(ratioDiff * 100).toFixed(1)}% from stated (${statedCalories}).`;
+  }
+
+  return {
+    status,
+    reason,
+    calculatedCalories: Math.round(calculatedCalories),
+    statedCalories,
+    deviation: ratioDiff
+  };
+};
+
 module.exports = {
-  calculateDataCompleteness
+  calculateDataCompleteness,
+  validateMacroCalories
 };

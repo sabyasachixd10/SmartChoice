@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { usePreferences } from '../context/PreferenceContext';
-import { Settings, Save, CheckCircle } from 'lucide-react';
+import { Settings, Save, CheckCircle, Sliders, AlertTriangle, ShieldCheck, HeartPulse } from 'lucide-react';
 
 const PreferencesPage = () => {
   const { preferences, updatePreferences, loading } = usePreferences();
@@ -39,126 +39,174 @@ const PreferencesPage = () => {
     setTimeout(() => setSaved(false), 3000);
   };
 
-  if (loading) return <div className="text-center py-12">Loading preferences...</div>;
+  if (loading) return (
+    <div className="max-w-4xl mx-auto p-8 animate-pulse">
+      <div className="h-12 w-64 bg-gray-200 rounded-lg mb-12"></div>
+      <div className="space-y-6">
+        <div className="h-48 bg-gray-100 rounded-2xl"></div>
+        <div className="h-48 bg-gray-100 rounded-2xl"></div>
+      </div>
+    </div>
+  );
 
   return (
-    <div className="max-w-3xl mx-auto space-y-6">
-      <div className="flex items-center mb-6">
-        <Settings className="w-8 h-8 text-green-600 mr-3" />
-        <h1 className="text-3xl font-bold">Your Preferences</h1>
+    <div className="max-w-4xl mx-auto space-y-10 animate-in pb-12">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <div className="inline-flex items-center justify-center p-3 bg-indigo-50 text-indigo-600 rounded-xl mb-4 shadow-sm">
+            <Sliders className="w-6 h-6" />
+          </div>
+          <h1 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Personalization</h1>
+          <p className="text-lg text-gray-500 max-w-2xl">
+            Tailor your SmartChoice experience. Your preferences power our AI recommendations and scoring algorithms.
+          </p>
+        </div>
       </div>
-      
-      <p className="text-gray-600 mb-8">
-        Set your dietary preferences below. The SmartChoice recommendation engine will use these to personalize product rankings when you search and compare products.
-      </p>
 
-      <form onSubmit={handleSubmit} className="space-y-8 bg-white p-8 rounded-xl shadow-sm border">
+      <form onSubmit={handleSubmit} className="space-y-8">
         
-        {/* Soft Preferences */}
-        <section>
-          <h2 className="text-xl font-bold mb-4 border-b pb-2">Nutritional Goals</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="highProtein" checked={formData.highProtein || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">High Protein</span>
-            </label>
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="lowSugar" checked={formData.lowSugar || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">Low Sugar</span>
-            </label>
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="lowCalories" checked={formData.lowCalories || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">Low Calories</span>
-            </label>
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="lowSaturatedFat" checked={formData.lowSaturatedFat || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">Low Saturated Fat</span>
-            </label>
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="lowSodium" checked={formData.lowSodium || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">Low Sodium</span>
-            </label>
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="highFiber" checked={formData.highFiber || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">High Fiber</span>
-            </label>
+        {/* Nutritional Goals */}
+        <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 relative overflow-hidden group">
+          <div className="absolute top-0 right-0 p-8 opacity-5">
+            <HeartPulse className="w-32 h-32" />
           </div>
-        </section>
-
-        {/* Dietary Lifestyles */}
-        <section>
-          <h2 className="text-xl font-bold mb-4 border-b pb-2">Dietary Lifestyles</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="vegetarian" checked={formData.vegetarian || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">Vegetarian</span>
-            </label>
-            <label className="flex items-center space-x-3 p-3 border rounded-lg hover:bg-gray-50 cursor-pointer">
-              <input type="checkbox" name="vegan" checked={formData.vegan || false} onChange={handleChange} className="w-5 h-5 text-green-600" />
-              <span className="font-medium">Vegan</span>
-            </label>
-          </div>
-        </section>
-
-        {/* Hard Constraints */}
-        <section>
-          <h2 className="text-xl font-bold mb-4 border-b pb-2 text-red-600">Strict Exclusions (Hard Constraints)</h2>
-          <p className="text-sm text-gray-500 mb-4">Products matching these will be excluded from recommendations.</p>
-          
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Avoid Allergens (comma separated)</label>
-              <input 
-                type="text" 
-                placeholder="e.g. gluten, peanuts, milk" 
-                className="w-full p-2 border rounded focus:ring-red-500 focus:border-red-500"
-                value={(formData.avoidAllergens || []).join(', ')}
-                onChange={(e) => handleArrayChange(e, 'avoidAllergens')}
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Avoid Ingredients (comma separated)</label>
-              <input 
-                type="text" 
-                placeholder="e.g. palm oil, aspartame" 
-                className="w-full p-2 border rounded focus:ring-red-500 focus:border-red-500"
-                value={(formData.avoidIngredients || []).join(', ')}
-                onChange={(e) => handleArrayChange(e, 'avoidIngredients')}
-              />
+          <div className="relative z-10">
+            <h2 className="text-2xl font-bold mb-2 flex items-center text-gray-900">
+              Nutritional Goals
+            </h2>
+            <p className="text-gray-500 mb-6 text-sm">Select the nutritional targets you want to prioritize.</p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                { name: 'highProtein', label: 'High Protein', desc: 'Prioritize protein content' },
+                { name: 'lowSugar', label: 'Low Sugar', desc: 'Minimize added sugars' },
+                { name: 'lowCalories', label: 'Low Calories', desc: 'Focus on low-calorie options' },
+                { name: 'lowSaturatedFat', label: 'Low Sat. Fat', desc: 'Heart-healthy choices' },
+                { name: 'lowSodium', label: 'Low Sodium', desc: 'Reduce salt intake' },
+                { name: 'highFiber', label: 'High Fiber', desc: 'Prioritize digestive health' },
+              ].map((item) => (
+                <label key={item.name} className={`flex items-start p-4 border rounded-2xl cursor-pointer transition-all duration-200 ${formData[item.name] ? 'bg-indigo-50 border-indigo-200 ring-1 ring-indigo-200 shadow-sm' : 'bg-white border-gray-100 hover:border-gray-300 hover:bg-gray-50'}`}>
+                  <div className="flex items-center h-5 mt-0.5">
+                    <input 
+                      type="checkbox" 
+                      name={item.name} 
+                      checked={formData[item.name] || false} 
+                      onChange={handleChange} 
+                      className="w-5 h-5 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 cursor-pointer"
+                    />
+                  </div>
+                  <div className="ml-3">
+                    <span className={`block text-sm font-bold ${formData[item.name] ? 'text-indigo-900' : 'text-gray-900'}`}>{item.label}</span>
+                    <span className="block text-xs text-gray-500 mt-0.5">{item.desc}</span>
+                  </div>
+                </label>
+              ))}
             </div>
           </div>
-        </section>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Dietary Lifestyles */}
+          <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 relative overflow-hidden group">
+            <div className="relative z-10">
+              <h2 className="text-xl font-bold mb-2 flex items-center text-gray-900">
+                <ShieldCheck className="w-5 h-5 text-green-500 mr-2" /> Dietary Lifestyles
+              </h2>
+              <p className="text-gray-500 mb-6 text-sm">Align recommendations with your lifestyle.</p>
+              
+              <div className="space-y-4">
+                {[
+                  { name: 'vegetarian', label: 'Vegetarian', desc: 'No meat, poultry, or seafood' },
+                  { name: 'vegan', label: 'Vegan', desc: 'No animal products or by-products' },
+                ].map((item) => (
+                  <label key={item.name} className={`flex items-center justify-between p-4 border rounded-2xl cursor-pointer transition-all ${formData[item.name] ? 'bg-green-50 border-green-200 ring-1 ring-green-200 shadow-sm' : 'bg-white border-gray-100 hover:border-gray-300'}`}>
+                    <div>
+                      <span className={`block text-sm font-bold ${formData[item.name] ? 'text-green-900' : 'text-gray-900'}`}>{item.label}</span>
+                      <span className="block text-xs text-gray-500 mt-0.5">{item.desc}</span>
+                    </div>
+                    <div className="flex items-center h-5">
+                      <input 
+                        type="checkbox" 
+                        name={item.name} 
+                        checked={formData[item.name] || false} 
+                        onChange={handleChange} 
+                        className="w-5 h-5 text-green-600 border-gray-300 rounded focus:ring-green-500 cursor-pointer"
+                      />
+                    </div>
+                  </label>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Hard Constraints */}
+          <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 border-t-4 border-t-rose-500 relative overflow-hidden">
+            <div className="relative z-10">
+              <h2 className="text-xl font-bold mb-2 flex items-center text-gray-900">
+                <AlertTriangle className="w-5 h-5 text-rose-500 mr-2" /> Strict Exclusions
+              </h2>
+              <p className="text-gray-500 mb-6 text-sm">Products matching these will be strictly excluded.</p>
+              
+              <div className="space-y-5">
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5 uppercase tracking-wide text-xs">Avoid Allergens</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. gluten, peanuts, milk" 
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:bg-white transition-all text-sm"
+                    value={(formData.avoidAllergens || []).join(', ')}
+                    onChange={(e) => handleArrayChange(e, 'avoidAllergens')}
+                  />
+                  <p className="text-[10px] text-gray-400 mt-1.5 ml-1">Comma separated</p>
+                </div>
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5 uppercase tracking-wide text-xs">Avoid Ingredients</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. palm oil, aspartame" 
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-rose-500 focus:bg-white transition-all text-sm"
+                    value={(formData.avoidIngredients || []).join(', ')}
+                    onChange={(e) => handleArrayChange(e, 'avoidIngredients')}
+                  />
+                  <p className="text-[10px] text-gray-400 mt-1.5 ml-1">Comma separated</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         
         {/* Brands */}
-        <section>
-          <h2 className="text-xl font-bold mb-4 border-b pb-2">Brands</h2>
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Preferred Brands (comma separated)</label>
-              <input 
-                type="text" 
-                placeholder="e.g. Pringles, Coca-Cola" 
-                className="w-full p-2 border rounded focus:ring-green-500 focus:border-green-500"
-                value={(formData.preferredBrands || []).join(', ')}
-                onChange={(e) => handleArrayChange(e, 'preferredBrands')}
-              />
-            </div>
+        <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+          <h2 className="text-xl font-bold mb-2 text-gray-900">Brand Preferences</h2>
+          <p className="text-gray-500 mb-6 text-sm">Boost recommendations for your favorite brands.</p>
+          <div className="max-w-2xl">
+            <label className="block text-sm font-bold text-gray-700 mb-1.5 uppercase tracking-wide text-xs">Preferred Brands</label>
+            <input 
+              type="text" 
+              placeholder="e.g. Pringles, Coca-Cola" 
+              className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-sm"
+              value={(formData.preferredBrands || []).join(', ')}
+              onChange={(e) => handleArrayChange(e, 'preferredBrands')}
+            />
+            <p className="text-[10px] text-gray-400 mt-1.5 ml-1">Comma separated list of brand names</p>
           </div>
-        </section>
+        </div>
 
-        <div className="pt-4 flex items-center justify-end">
-          {saved && (
-            <span className="text-green-600 flex items-center mr-4">
-              <CheckCircle className="w-5 h-5 mr-1" />
-              Preferences Saved
-            </span>
-          )}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between border-t border-gray-200">
+          <div className="mb-4 sm:mb-0">
+            {saved && (
+              <span className="text-emerald-600 flex items-center bg-emerald-50 px-4 py-2 rounded-lg text-sm font-bold shadow-sm border border-emerald-100 animate-in">
+                <CheckCircle className="w-5 h-5 mr-2" />
+                Preferences Successfully Saved
+              </span>
+            )}
+          </div>
           <button 
             type="submit" 
-            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center font-bold"
+            className="w-full sm:w-auto px-8 py-4 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 flex items-center justify-center font-bold shadow-sm hover:shadow-md transition-all transform active:scale-95"
           >
             <Save className="w-5 h-5 mr-2" />
-            Save Preferences
+            Save Personalization
           </button>
         </div>
       </form>

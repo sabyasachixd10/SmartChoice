@@ -1,6 +1,9 @@
 const ragRetrievalService = require('../services/ragRetrievalService');
 const llmService = require('../services/llmService');
 const ragConfig = require('../config/ragConfig');
+const sessionManager = require('../services/sessionManager');
+const Product = require('../models/Product');
+const agentOrchestrator = require('../services/agentOrchestrator');
 
 // @desc    Get RAG context for a query
 // @route   GET /api/rag/context?q=...&topK=...
@@ -38,7 +41,7 @@ const getRagContext = async (req, res, next) => {
 // @access  Public
 const postRagQuery = async (req, res, next) => {
   try {
-    const { query, topK } = req.body;
+    const { query, topK, sessionId, activeProductIds } = req.body;
 
     if (!query || typeof query !== 'string' || query.trim().length === 0) {
       return res.status(400).json({ success: false, error: 'Query is required and must be a non-empty string.' });
@@ -59,39 +62,18 @@ const postRagQuery = async (req, res, next) => {
     }
 
     // Add safe request logging
-    console.log(`[RAG API] Processing query: "${trimmedQuery.substring(0, 50)}${trimmedQuery.length > 50 ? '...' : ''}" (topK: ${parsedTopK})`);
+    console.log(`[RAG API] Processing query via Orchestrator: "${trimmedQuery.substring(0, 50)}${trimmedQuery.length > 50 ? '...' : ''}"`);
 
-    const context = await ragRetrievalService.retrieveRagContext(trimmedQuery, { topK: parsedTopK });
-    
-    let answer = null;
-    try {
-      answer = await llmService.generateAnswer(trimmedQuery, context);
-    } catch (llmError) {
-      console.error(`[LLM Service Error] ${llmError.message}`);
-      // If LLM fails (e.g. missing API key, rate limit), we return a clear error in the answer block
-      // but still return the retrieved context.
-      answer = {
-        text: "I'm sorry, I am currently unable to generate an answer due to a configuration or service error.",
-        grounded: false,
-        confidence: "insufficient",
-        evidence: null,
-        error: llmError.message.includes('GEMINI_API_KEY') ? 'Configuration Error' : 'Generation Failed'
-      };
-      
-      // If the error was missing API key, return 500 or 503, but the requirement says:
-      // "If the API key is missing, the API must return a clear configuration error rather than fabricate an answer."
-      if (llmError.message.includes('GEMINI_API_KEY')) {
-        return res.status(503).json({ success: false, error: "AI generation is not configured (missing GEMINI_API_KEY)." });
-      }
-    }
-
-    const responsePayload = {
-      query: context.query,
-      retrieval: context.retrieval,
-      answer: answer,
-      groundingPolicy: context.groundingPolicy,
-      products: context.products
+    const orchestratorPayload = {
+      sessionId,
+      message: trimmedQuery,
+      activeProductIds,
+      attachments: [], // OCR handling can be injected here later
+      barcode: null, // Barcode lookup injected here later
+      metadata: { topK: parsedTopK }
     };
+
+    const responsePayload = await agentOrchestrator.processRequest(orchestratorPayload);
 
     res.status(200).json({ success: true, data: responsePayload });
   } catch (error) {

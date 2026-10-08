@@ -1,0 +1,21 @@
+{
+  "INS 330": {
+    "name": "Citric Acid",
+    "classification": "Acidity Regulator",
+    "fssaiStatus": "permitted",
+    "source": "FSSAI Food Safety and Standards (Food Products Standards and Food Additives) Regulations, 2011"
+  },
+  "INS 211": {
+    "name": "Sodium Benzoate",
+    "classification": "Preservative",
+    "fssaiStatus": "restricted",
+    "maxLimit": "Depends on category",
+    "source": "FSSAI Regulations, 2011"
+  },
+  "INS 621": {
+    "name": "Monosodium Glutamate (MSG)",
+    "classification": "Flavour Enhancer",
+    "fssaiStatus": "restricted",
+    "source": "FSSAI Regulations, 2011"
+  }
+}

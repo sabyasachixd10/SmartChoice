@@ -1,0 +1,19 @@
+{
+  "milk solids": {
+    "isAllergen": true,
+    "allergenType": "Dairy",
+    "fssaiStatus": "compliant",
+    "source": "FSSAI Labeling Regulations"
+  },
+  "wheat flour": {
+    "isAllergen": true,
+    "allergenType": "Gluten",
+    "fssaiStatus": "compliant",
+    "source": "FSSAI Labeling Regulations"
+  },
+  "sugar": {
+    "isAllergen": false,
+    "fssaiStatus": "compliant",
+    "source": "FSSAI Regulations"
+  }
+}
